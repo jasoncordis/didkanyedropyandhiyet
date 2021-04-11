@@ -1,17 +1,22 @@
 <?php
 $handle = curl_init();
  
-$url = "https://www.ladygaga.com";
- 
-// Set the url
-curl_setopt($handle, CURLOPT_URL, $url);
-// Set the result output to be a string.
-curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
- 
-$output = curl_exec($handle);
- 
-curl_close($handle);
-echo $output;
+$artist = 'Led Zeppelin';
+$title = 'Kashmir';
+
+$spotifyURL = 'https://api.spotify.com/v1/search?q='.$artist.'%20'.$title.'&type=track';
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $spotifyURL);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$authorization = "Authorization: Bearer BQCGwMWa8GWxNdRNpT4AjrS8tIHhDt7Zm1lAkDKssBB5DyZOP_TtXfOcPoKlXvN9sI0qqFIDQ4W_9fToMYu2DamQVboBSUXJc85AOXkfQfsphyoI3APYqC6Mkgde9j4zAv9lsKgnMxs";
+$json = curl_exec($ch);
+$json = json_decode($json);
+curl_close($ch);
+
+echo '<pre>'.print_r($json, true).'</pre>';
 ?>
 
 <!DOCTYPE html>
