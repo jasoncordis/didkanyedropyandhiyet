@@ -4,7 +4,7 @@ $handle = curl_init();
 $artist = 'Led Zeppelin';
 $title = 'Kashmir';
 
-$spotifyURL = 'https://api.spotify.com/v1/search?q='.$artist.'%20'.$title.'&type=track';
+$spotifyURL = 'https://api.spotify.com/v1/search?q=Yahndi&type=album&market=US&limit=10&offset=5';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $spotifyURL);
