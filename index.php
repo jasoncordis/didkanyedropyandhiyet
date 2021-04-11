@@ -13,12 +13,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    ));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
-$data = curl_exec($ch);
+$json = curl_exec($ch);
+$json = json_decode($json);
 
-// get info about the request
-$info = curl_getinfo($ch);
-// close curl resource to free up system resources
-curl_close($ch);
+echo $json;
 ?>
 
 <!DOCTYPE html>
