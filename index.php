@@ -3,12 +3,16 @@ $handle = curl_init();
 
 $spotifyURL = 'https://api.spotify.com/v1/search?q=Yahndi&type=album&market=US&limit=10&offset=5';
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $spotifyURL);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$authorization = "Authorization: Bearer BQCGwMWa8GWxNdRNpT4AjrS8tIHhDt7Zm1lAkDKssBB5DyZOP_TtXfOcPoKlXvN9sI0qqFIDQ4W_9fToMYu2DamQVboBSUXJc85AOXkfQfsphyoI3APYqC6Mkgde9j4zAv9lsKgnMxs";
+
+header('Content-Type: application/json'); // Specify the type of data
+$ch = curl_init('https://api.spotify.com/v1/search?q=Yahndi&type=album&market=US&limit=10&offset=5'); // Initialise cURL
+$post = json_encode($post); // Encode the data array into a JSON string
+$authorization = "Authorization: Bearer BQCUhaaXA_mjJ-YPPmZ1u4QA_rOsh6sjihAE9Y5X-uezSI7hjXDqtwWIVjhlyWd094v15SPpZ4H70Awq0eTwrfK9VlWH_cWW87q3bVrjGEd8gaBvs_ir67d4Bnnmy7EuxIl56GwL8Yk; // Prepare the authorisation token
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); // Inject the token into the header
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, 1); // Specify the request method as POST
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post); // Set the posted fields
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // This will follow any redirects
 $json = curl_exec($ch);
 $json = json_decode($json);
 curl_close($ch);
