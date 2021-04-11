@@ -154,7 +154,13 @@ function getContent($url, $geturl = false)
 <style type="text/css">
 	html, body
 	{
-		font-family: "Gotu"
+	  margin: auto;
+	  padding: 300px 0 0;
+	  font-family: Arial, Times;
+	  font-size: 300px;
+	  color: black;
+	  font-weight: 550;
+	  overflow:hidden;
 	}
 	input
 	{
@@ -268,7 +274,6 @@ body {
 	<div class="m-5">
 		&nbsp;
 	</div>
-	<div class="bg-dark text-white" style="position: fixed; bottom: 0;width: 100%;padding:15px">Developed by <a target="_blank" href="https://www.github.com/TufayelLUS">tufayel.rocks</a> <span style="float: right;">Copyright &copy; <?php echo date("Y"); ?></span></div>
     <script type="text/javascript">
         window.setInterval(function(){
             if ($("input[name='tiktok-url']").attr("placeholder") == "https://www.tiktok.com/@username/video/1234567890123456789") {
