@@ -1,8 +1,5 @@
 <?php
 $handle = curl_init();
- 
-$artist = 'Led Zeppelin';
-$title = 'Kashmir';
 
 $spotifyURL = 'https://api.spotify.com/v1/search?q=Yahndi&type=album&market=US&limit=10&offset=5';
 
