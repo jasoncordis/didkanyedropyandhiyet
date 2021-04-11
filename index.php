@@ -172,6 +172,15 @@ function getContent($url, $geturl = false)
 	}
 </style>
 </head>
+<style>
+body {
+  text-align: center;
+  background-image: url('kanye-west-yandhi-hologram-01.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+</style>
 <body class="bg-light">
 	<div class="text-center p-5">
 		<h1 class="mt-5">NO</h1>		
