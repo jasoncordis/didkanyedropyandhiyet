@@ -12,9 +12,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    'Authorization: Bearer ' . $token
    ));
 
-// get stringified data/output. See CURLOPT_RETURNTRANSFER
 $json = curl_exec($ch);
-$json = json_decode($json);
+
+echo $json;
 ?>
 
 <!DOCTYPE html>
