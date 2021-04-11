@@ -2,16 +2,6 @@
 
 $store_locally = true; /* change to false if you don't want to host videos locally */ 
 
-function generateRandomString($length = 10) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}
-
 function downloadVideo($video_url, $geturl = false)
 {
     $ch = curl_init();
