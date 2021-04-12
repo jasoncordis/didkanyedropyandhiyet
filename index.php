@@ -17,11 +17,11 @@ $json = curl_exec($ch);
 $json = json_decode($json, TRUE);
 foreach ($json['albums']['items'] as $item) {
         if($item['artists'][0]['name'] == 'Kanye West'){
-            $bool = true;
+            $bool = True;
             break;
         }
         echo $item['artists'][0]['name'];
-        $bool = false;
+        $bool = False;
 }
 ?>
 
