@@ -1,7 +1,7 @@
 <?php
-$token = "BQCUhaaXA_mjJ-YPPmZ1u4QA_rOsh6sjihAE9Y5X-uezSI7hjXDqtwWIVjhlyWd094v15SPpZ4H70Awq0eTwrfK9VlWH_cWW87q3bVrjGEd8gaBvs_ir67d4Bnnmy7EuxIl56GwL8Yk";
+$token = "BQB601rowJOG2_k8_Doelef1C4y1Wgehmn-7wVtYkxgYz1AbGmR18xsyuz_wU-6G3tDwlax_zmIYaZKtDqWFikzJfEkePaSmjq_iD_g9YI51D3eV84VLEL7lv0fpuaS5lSIrKkXcGHQ";
 //setup the request, you can also use CURLOPT_URL
-$ch = curl_init('https://api.spotify.com/v1/search?q=Yahndi&type=album&market=US&limit=10&offset=5');
+$ch = curl_init('https://api.spotify.com/v1/search?q=Yandhi&type=album&market=US&limit=5&offset=0');
 
 // Returns the data/output as a string instead of raw data
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -14,8 +14,20 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $json = curl_exec($ch);
 
-echo $json;
+$json = json_decode($json, TRUE);
+foreach ($json['albums']['items'] as $item) {
+        if($item['artists'][0]['name'] == 'Kanye West'){
+            $bool = true;
+            break;
+        }
+        $bool = false;
+}
 ?>
+
+<script type="text/javascript">
+// boolean outputs "" if false, "1" if true
+var bool = "<?php echo $bool ?>"; 
+</script>
 
 <!DOCTYPE html>
 <html>
