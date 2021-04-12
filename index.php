@@ -26,7 +26,9 @@ foreach ($json['albums']['items'] as $item) {
 
 <script type="text/javascript">
 // boolean outputs "" if false, "1" if true
-var bool = "<?php echo $bool ?>"; 
+var bool = <?= json_encode($bool); ?>
+var myString: string = String(bool);
+alert(myString);
 </script>
 
 <!DOCTYPE html>
