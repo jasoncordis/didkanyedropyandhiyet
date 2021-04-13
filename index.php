@@ -3,6 +3,7 @@
 <head>
 	<title>Did Kanye Drop Yandhi Yet?</title>
 	<link rel="icon" href="kanyefav.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <style>
 body {
@@ -11,6 +12,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  font-size: 300px;
+  font-family: Arial, Times;
 }
 </style>
 <body>
