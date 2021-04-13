@@ -18,7 +18,7 @@ body {
 	font-size: 300px;
 	color: black;
 	font-family: Arial, Times;
-	font-weight: 90px;
+	font-weight: 160px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
