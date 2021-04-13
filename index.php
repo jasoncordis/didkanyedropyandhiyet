@@ -11,7 +11,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,     'grant_type=client_credentials' );
 curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization: Basic '.base64_encode($client_id.':'.$client_secret))); 
 
 $result=curl_exec($ch);
-echo $result;
 $arr = json_decode(result);
 $token = $arr->access_token;
 echo $token;
