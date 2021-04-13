@@ -12,7 +12,32 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization: Basic '.base64_en
 
 $result=curl_exec($ch);
 echo $result;
-?>
+$arr = json_decode(result);
+$token = $arr->access_token;
+
+//setup the request, you can also use CURLOPT_URL
+$ch = curl_init('https://api.spotify.com/v1/search?q=Yandhi&type=album&market=US&limit=5&offset=0');
+
+// Returns the data/output as a string instead of raw data
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+//Set your auth headers
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+   'Content-Type: application/json',
+   'Authorization: Bearer ' . $token
+   ));
+
+$json = curl_exec($ch);
+
+$json = json_decode($json, TRUE);
+foreach ($json['albums']['items'] as $item) {
+        if($item['artists'][0]['name'] == 'Kanye West'){
+            $bool = True;
+            break;
+        }
+        echo $item['artists'][0]['name'];
+        $bool = False;
+}
 
 <script type="text/javascript">
 // boolean outputs "" if false, "1" if true
