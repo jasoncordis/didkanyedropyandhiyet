@@ -12,7 +12,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization: Basic '.base64_en
 
 $result=curl_exec($ch);
 echo $result;
-}
+?>
 
 <script type="text/javascript">
 // boolean outputs "" if false, "1" if true
