@@ -33,7 +33,6 @@ foreach ($json['albums']['items'] as $item) {
             $bool = True;
             break;
         }
-        echo $item['artists'][0]['name'];
         $bool = False;
 }
 ?>
