@@ -1,3 +1,9 @@
+<script type="text/javascript">
+function printStatus(status){
+	console.log(status);
+}
+</script>
+
 <?php
 
 $client_id = '481e703f04494aba9c6509119028669b'; 
@@ -48,12 +54,6 @@ echo '<script type="text/javascript">',
 }
 
 ?>
-
-<script type="text/javascript">
-function printStatus(status){
-	console.log(status);
-}
-</script>
 
 <!DOCTYPE html>
 <html>
