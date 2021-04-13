@@ -35,6 +35,13 @@ foreach ($json['albums']['items'] as $item) {
         }
         $bool = False;
 }
+
+if(!$bool){
+	echo "NO";
+}
+else
+	ECHO "YES";
+
 ?>
 
 <!DOCTYPE html>
@@ -48,32 +55,6 @@ foreach ($json['albums']['items'] as $item) {
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
-<style type="text/css">
-	html, body
-	{
-	  margin: auto;
-	  padding: 300px 0 0;
-	  font-family: Arial, Times;
-	  font-size: 300px;
-	  color: black;
-	  font-weight: 550;
-	  overflow:hidden;
-	}
-	input
-	{
-		padding: 5px;
-		border-radius: 10px;
-		border-style: solid;
-		border-color: blue;
-		transition-duration: 0.5s;
-		width: 80%;
-	}
-	input:focus
-	{
-		border-color: skyblue;
-		transition-duration: 0.5s;
-	}
-</style>
 </head>
 <style>
 body {
