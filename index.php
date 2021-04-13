@@ -1,5 +1,27 @@
 <?php
-$token = "BQB601rowJOG2_k8_Doelef1C4y1Wgehmn-7wVtYkxgYz1AbGmR18xsyuz_wU-6G3tDwlax_zmIYaZKtDqWFikzJfEkePaSmjq_iD_g9YI51D3eV84VLEL7lv0fpuaS5lSIrKkXcGHQ";
+
+$url = 'https://accounts.spotify.com/api/token';
+$method = 'POST';
+
+$credentials = "{481e703f04494aba9c6509119028669b}:{ff9760f46f92477b8fd6d38c26f5a92d}";
+
+$headers = array(
+        "Accept: */*",
+        "Content-Type: application/x-www-form-urlencoded",
+        "User-Agent: runscope/0.1",
+        "Authorization: Basic " . base64_encode($credentials));
+$data = 'grant_type=client_credentials';
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+$response = curl_exec($ch);
+$arr = json_decode($response);
+$token = $arr->access_token;
+
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://api.spotify.com/v1/search?q=Yandhi&type=album&market=US&limit=5&offset=0');
 
