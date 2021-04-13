@@ -7,13 +7,17 @@
 </head>
 <style>
 body {
-  text-align: center;
-  background-image: url('kanye-west-yandhi-hologram-01.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  font-size: 300px;
-  font-family: Arial, Times;
+	text-align: center;
+	background-image: url('kanye-west-yandhi-hologram-01.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+
+}
+#statusText{
+	font-size: 300px;
+	font-family: Arial, Times;
+	margin: auto;
 }
 </style>
 <body>
