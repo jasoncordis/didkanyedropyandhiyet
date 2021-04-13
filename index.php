@@ -43,14 +43,10 @@ foreach ($json['albums']['items'] as $item) {
 }
 
 if(!$bool){
-echo '<script type="text/javascript">',
-     'printStatus('NO');',
-     '</script>'
+echo "<script>printStatus('NO')</script>";
 }
 else{
-echo '<script type="text/javascript">',
-     'printStatus('NO');',
-     '</script>'
+echo "<script>printStatus('YES')</script>";
 }
 
 ?>
