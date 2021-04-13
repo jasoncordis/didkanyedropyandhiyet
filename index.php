@@ -16,7 +16,9 @@ body {
 }
 #statusText{
 	font-size: 300px;
+	color: black;
 	font-family: Arial, Times;
+	font-weight: 900px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
