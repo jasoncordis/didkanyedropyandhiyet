@@ -1,25 +1,18 @@
 <?php
 
-$url = 'https://accounts.spotify.com/api/token';
-$method = 'POST';
-
-$credentials = "{481e703f04494aba9c6509119028669b}:{ff9760f46f92477b8fd6d38c26f5a92d}";
-
-$headers = array(
-        "Accept: */*",
-        "Content-Type: application/x-www-form-urlencoded",
-        "User-Agent: runscope/0.1",
-        "Authorization: Basic " . base64_encode($credentials));
-$data = 'grant_type=client_credentials';
+$client_id = '481e703f04494aba9c6509119028669b'; 
+$client_secret = 'ff9760f46f92477b8fd6d38c26f5a92d'; 
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_URL,            'https://accounts.spotify.com/api/token' );
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+curl_setopt($ch, CURLOPT_POST,           1 );
+curl_setopt($ch, CURLOPT_POSTFIELDS,     'grant_type=client_credentials' ); 
+curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization: Basic '.base64_encode($client_id.':'.$client_secret))); 
 
-$response = curl_exec($ch);
-$arr = json_decode($response);
+$result=curl_exec($ch);
+echo $result;
+$arr = json_decode(result);
 $token = $arr->access_token;
 
 //setup the request, you can also use CURLOPT_URL
