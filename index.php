@@ -1,6 +1,7 @@
 <script type="text/javascript">
 function printStatus(status){
 	console.log(status);
+	document.getElementById("statusText").innerHTML = status;
 }
 </script>
 
@@ -72,9 +73,8 @@ body {
   background-position: center;
 }
 </style>
-<body class="bg-light">
-	<div class="text-center p-5">
-		<h1 class="mt-5">NO</h1>		
+<body>
+	<div id = "statusText">		
 	</div>
 </body>
 </html>
