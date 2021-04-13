@@ -12,6 +12,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,     array('Authorization: Basic '.base64_en
 
 $result=curl_exec($ch);
 echo $result;
+$arr = json_decode(result);
+$token = $arr->access_token;
+echo $token;
 ?>
 
 <script type="text/javascript">
