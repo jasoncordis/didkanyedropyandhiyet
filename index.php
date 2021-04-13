@@ -40,7 +40,7 @@ if(!$bool){
 	echo "NO";
 }
 else
-	ECHO "YES";
+	echo "YES";
 
 ?>
 
