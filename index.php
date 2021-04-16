@@ -8,7 +8,7 @@
 <style>
 body {
 	text-align: center;
-	background-image: url('kanye-west-yandhi-hologram-01.jpg');
+	background-image: url('yandhi.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
