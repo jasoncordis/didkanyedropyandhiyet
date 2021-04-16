@@ -41,8 +41,8 @@ function printStatus(status){
 
 <?php
 
-$client_id = '481e703f04494aba9c6509119028669b'; 
-$client_secret = 'ff9760f46f92477b8fd6d38c26f5a92d'; 
+$client_id = ''; 
+$client_secret = ''; 
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,            'https://accounts.spotify.com/api/token' );
